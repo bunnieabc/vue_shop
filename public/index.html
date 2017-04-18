@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:og='http://ogp.me/ns#'>
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title></title>
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+  <meta content="" property="og:title">
+  <meta content="" property="og:site_name">
+  <meta content="/img/common/FacebookShare.jpg" property="og:image">
+  <meta content="" property="og:description">
+  <link href="/img/common/web-icon.png" rel="shortcut icon">
+  <link rel="stylesheet" href="/assets/css/normalize.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/assets/css/index.css">
+</head>
+<body id="element">
+<div class="header">
+  <div class="header-space"></div>
+  <div class="header-cart">
+    購物車有<span class="item-count" > {{ cartResult() }} </span>樣商品
+    <button class="check-btn">查看</button>
+  </div>
+</div>
+<div class="checklist">
+  <div class="checklist-wrap">
+    <div class="checklist-title">購物車清單</div>
+    <hr>
+    <h3 class="no-items" v-if = "cartResult() == 0">沒有任何物品</h3>
+    <div class="checklist-list" v-for="i in cart_items">
+
+      <div class="checklist-pic" style="background-image:url('/assets/img/main/{{ i }}.png')"></div>
+      <div class="checklist-content">這是一段測試文字</div>
+      <div class="checklist-delete" v-on:click = "deleteItem(i)">刪除</div>
+    </div>
+    <div class="close">&times;</div>
+  </div>
+</div>
+<div class="item-wrap" >
+  <div class="item-card" v-for="(i, item) in items">
+    <div class="item-card-pic" style="background-image:url('/assets/img/main/{{ item }}.png')"></div>
+    <div class="add-btn" v-on:click = "putToCart(item)">+</div>
+  </div>
+</div>
+</body>
+<script src="/assets/js/jquery-2.1.4.min.js"></script>
+<script src="/assets/js/vue.min.js"></script>
+<script src="/assets/js/scrollreveal/scrollreveal.min.js"></script>
+<script src="/assets/js/animateNumber.js"></script>
+<script src="/assets/js/headroom/headroom.js"></script>
+<script src="/assets/js/headroom/jQuery.headroom.js"></script>
+<script src="/assets/js/index.js"></script>
+</html>
