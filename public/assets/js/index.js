@@ -47,10 +47,12 @@ var item = new Vue({
       var t1 = this.cart_items.length
       return this.cart_items.length;
     },
-    deleteItem: function(i){
+    deleteItem: function(index){
+      /*
       this.cart_items = jQuery.grep(this.cart_items, function(value) {
-        return value != i;
-      })
+        return value != index;
+      })*/
+      this.cart_items.splice(index, 1);
     }
 
   }

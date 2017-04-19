@@ -29,11 +29,11 @@
     <div class="checklist-title">購物車清單</div>
     <hr>
     <h3 class="no-items" v-if = "cartResult() == 0">沒有任何物品</h3>
-    <div class="checklist-list" v-for="i in cart_items">
+    <div class="checklist-list" v-for="(index, i) in cart_items" track-by="$index">
 
       <div class="checklist-pic" style="background-image:url('/assets/img/main/{{ i }}.png')"></div>
       <div class="checklist-content">這是一段測試文字</div>
-      <div class="checklist-delete" v-on:click = "deleteItem(i)">刪除</div>
+      <div class="checklist-delete" v-on:click = "deleteItem(index)">刪除</div>
     </div>
     <div class="close">&times;</div>
   </div>
