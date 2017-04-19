@@ -1,8 +1,4 @@
 $(document).ready(function() {
-  //loading
- 
-  //loading END
-
 
 });
 $(".close").click(function(){
@@ -39,19 +35,11 @@ var item = new Vue({
     putToCart: function(i){
       this.cart_items.push(i);
       var t1 = this.cart_items.length
-      console.log("???",t1)
-      //return this.cart_item.size();
     },
     cartResult: function(){
-      console.log(t1)
-      var t1 = this.cart_items.length
       return this.cart_items.length;
     },
     deleteItem: function(index){
-      /*
-      this.cart_items = jQuery.grep(this.cart_items, function(value) {
-        return value != index;
-      })*/
       this.cart_items.splice(index, 1);
     }
 
